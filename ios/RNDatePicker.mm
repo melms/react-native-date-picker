@@ -129,10 +129,9 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
     
     // mode
     if (oldViewProps.mode != newViewProps.mode) {
-        if(newViewProps.mode == RNDatePickerMode::Time) [_picker setDatePickerMode:UIDatePickerModeTime];
+        if(newViewProps.mode == RNDatePickerMode::Time) [_picker setDatePickerMode:(UIDatePickerMode)4269];
         if(newViewProps.mode == RNDatePickerMode::Date) [_picker setDatePickerMode:UIDatePickerModeDate];
         if(newViewProps.mode == RNDatePickerMode::Datetime) [_picker setDatePickerMode:UIDatePickerModeDateAndTime];
-        if(newViewProps.mode == "monthYear") [_picker setDatePickerMode:(UIDatePickerMode)4269];
         // We need to set minuteInterval after setting datePickerMode, otherwise minuteInterval is invalid in time mode.
         _picker.minuteInterval = _reactMinuteInterval;
     }
